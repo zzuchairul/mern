@@ -1,13 +1,11 @@
 import CreateRoutes from "./create/create.routes";
-import FindRoutes from "./find/find.route";
+import FindRoutes from "./find/find.routes";
+import DeleteRoutes from "./delete/delete.routes";
 import { Router } from "express";
 
 const router = Router();
 
-// router "{url}/api/card/find"
-router.use("/find", FindRoutes);
-
-// router "{url}/api/card/create"
-router.use("/create", CreateRoutes);
+// router "{url}/api/card/"
+router.use("/", FindRoutes, CreateRoutes, DeleteRoutes);
 
 export default router;
