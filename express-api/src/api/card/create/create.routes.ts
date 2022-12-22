@@ -14,7 +14,9 @@ router.post("/", async (req: Request, res: Response) => {
     const saveData = await data.save();
     res.status(201).json(saveData);
   } catch (error: any) {
-    res.status(400).send(error);
+    res.status(400).json({
+      message: error.message,
+    });
   }
 });
 
