@@ -5,7 +5,7 @@ import { Router } from "express";
 
 const router = Router();
 
-// router "{url}/api/card/"
+// router "{url}/api/note/"
 router.use("/", FindRoutes, CreateRoutes, DeleteRoutes);
 
 export default router;

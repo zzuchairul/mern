@@ -1,19 +1,19 @@
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
-import Card from "../../../models/Card";
+import Note from "../../../models/Note";
 
 const router = Router();
 
 router.delete("/:id", async (req: Request, res: Response) => {
   try {
-    const deleted = await Card.deleteOne({ _id: req.params.id });
+    const deleted = await Note.deleteOne({ _id: req.params.id });
 
     if (deleted.deletedCount === 0) {
-      throw "Cannot find Card by given id or Card has been deleted";
+      throw "Cannot find Note by given id or Note has been deleted";
     }
 
     res.status(200).json({
-      message: "Card deleted successfully",
+      message: "Note deleted successfully",
     });
   } catch (error: any) {
     res.status(400).json({

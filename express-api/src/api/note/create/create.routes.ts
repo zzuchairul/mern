@@ -1,16 +1,16 @@
 import { Request, Response, Router } from "express";
-import Card from "../../../models/Card";
+import Note from "../../../models/Note";
 
 const router = Router();
 
 /**
- * Create card
+ * Create note
  * METHOD: POST
- * route "{url}/api/card/create"
+ * route "{url}/api/note"
  */
 router.post("/", async (req: Request, res: Response) => {
   try {
-    const data = new Card(req.body);
+    const data = new Note(req.body);
     const saveData = await data.save();
     res.status(201).json(saveData);
   } catch (error: any) {

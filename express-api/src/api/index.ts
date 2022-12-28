@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import CardRoutes from "./card/card.routes";
+import NoteRoutes from "./note/note.routes";
 
 const router = Router();
 
-// route "{url}/api/card"
-router.use("/card", CardRoutes);
+// route "{url}/api/note"
+router.use("/note", NoteRoutes);
 
 export default router;

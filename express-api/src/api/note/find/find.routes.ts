@@ -1,30 +1,30 @@
 import { Router, Request, Response } from "express";
 
-import Card from "../../../models/Card";
+import Note from "../../../models/Note";
 
 const router = Router();
 
 /**
- * get all cards
+ * get all notes
  * METHOD: GET
- * route "{url}/api/card/find"
+ * route "{url}/api/note/find"
  */
 router.get("/", async (_req: Request, res: Response) => {
-  const data = await Card.find();
+  const data = await Note.find();
   res.status(200).json(data);
 });
 
 /**
- * get card by id
+ * get note by id
  * METHOD: GET
- * route "{url}/api/card/find/:id"
+ * route "{url}/api/note/find/:id"
  */
 router.get("/:id", async (req: Request, res: Response) => {
   try {
-    const data = await Card.findById(req.params.id);
+    const data = await Note.findById(req.params.id);
 
     if (data == null) {
-      throw "Cannot find Card with given id";
+      throw "Cannot find Note with given id";
     }
 
     res.status(200).json(data);

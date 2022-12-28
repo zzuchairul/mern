@@ -1,11 +1,15 @@
 require("dotenv").config();
 
 import express, { NextFunction, Request, Response } from "express";
+import cors from "cors";
 import APIRoutes from "./api";
 import "./db";
 
 const app = express();
+
 app.use(express.json());
+app.use(cors());
+
 app.use((req: Request, _: Response, next: NextFunction) => {
   console.log("Method:", req.method);
   console.log("API URL:", req.originalUrl);
