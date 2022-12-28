@@ -8,7 +8,11 @@ import "./db";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use((req: Request, _: Response, next: NextFunction) => {
   console.log("Method:", req.method);
