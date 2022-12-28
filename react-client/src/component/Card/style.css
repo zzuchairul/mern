@@ -1,0 +1,65 @@
+.Card {
+  overflow: hidden;
+  background-color: rgb(252, 251, 255);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 23.625em;
+  height: 15.875em;
+  margin: 18px;
+}
+.Card:hover {
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
+}
+
+.Card__wrapper {
+  padding: 23px 14px;
+}
+
+.Card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Card__header > h3 {
+  color: rgb(26, 26, 26);
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0;
+}
+
+.Card__body {
+  color: rgba(26, 26, 26, 0.74);
+  text-align: justify;
+}
+
+.Card__orange {
+  background-color: rgb(255, 242, 216);
+}
+
+.Card__orange hr {
+  border: 2px solid rgb(255, 165, 0);
+}
+
+.Card__green {
+  background-color: rgb(230, 243, 234);
+}
+
+.Card__green hr {
+  border: 2px solid rgb(104, 178, 102);
+}
+
+.Card__red {
+  background-color: rgb(255, 231, 231);
+}
+
+.Card__red hr {
+  border: 2px solid rgb(255, 108, 101);
+}
+
+.Card__purple {
+  background-color: rgb(221, 221, 252);
+}
+
+.Card__purple hr {
+  border: 2px solid rgb(152, 84, 203);
+}/*# sourceMappingURL=style.css.map */
