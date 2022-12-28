@@ -1,20 +1,19 @@
 .SearchBar {
-  border-radius: 3em;
-  color-scheme: light;
+  border-radius: 20px;
+  color-scheme: rgb(252, 251, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: rgb(252, 251, 255);
   width: 246px;
   height: 48px;
   overflow: hidden;
 }
-.SearchBar span {
-  display: inline-block;
-  font-size: 1.5rem;
-}
 .SearchBar > input {
-  height: 100%;
   border: none;
   outline: none;
+}
+
+.SearchBar__icon {
+  color: black;
 }/*# sourceMappingURL=style.css.map */
