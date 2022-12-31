@@ -1,23 +1,24 @@
-import { IconContext } from 'react-icons/lib';
+import DeleteButton from '../DeleteButton/DeleteButton';
 import './style.css';
-import { RxCross2 } from 'react-icons/rx'
 
-const Card = (props: any) => {
+const Card = ({ title, desc, _id, deleteNote }: {
+  title: String,
+  desc: String,
+  _id: String
+  deleteNote: Function
+}) => {
   return (
-    <div className="Card Card__purple">
+    <div className="Card Card__purple" >
       <div className="Card__wrapper">
         <div className="Card__header">
-          <h3>Title</h3>
-          <IconContext.Provider value={{
-            color: "black",
-            size: "24px"
-          }}>
-            <RxCross2 />
-          </IconContext.Provider>
+          <h3>{title}</h3>
+          <DeleteButton
+            _id={_id}
+            deleteNote={deleteNote} />
         </div>
         <hr />
         <div className="Card__body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quas asperiores sunt iure temporibus nam dolorum animi rem illum maxime, repellendus ullam, quod cupiditate non nostrum. Quas a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium a esse accusantium.</p>
+          <p>{desc}</p>
         </div>
       </div>
     </div>

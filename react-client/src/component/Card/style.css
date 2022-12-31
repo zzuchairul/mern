@@ -61,5 +61,7 @@
 }
 
 .Card__purple hr {
-  border: 2px solid rgb(152, 84, 203);
+  border: 0;
+  padding: 1px;
+  background: rgb(152, 84, 203);
 }/*# sourceMappingURL=style.css.map */

@@ -1,12 +1,15 @@
 import './style.css'
 import SearchBar from '../component/SearchBar/SearchBar'
-import Button from '../component/Button/Button'
+import AddButton from '../component/AddButton/AddButton'
 
-const Header = () => {
+const Header = ({ createNote }: {
+  createNote: Function
+}) => {
   return (
     <div className="Header">
       <SearchBar />
-      <Button />
+      <AddButton
+        createNote={createNote} />
     </div>
   )
 }

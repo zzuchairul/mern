@@ -1,26 +1,29 @@
 import './style.css'
 import Card from '../component/Card/Card'
-import { useEffect, useState } from 'react'
 
-const Body = () => {
-  const [notes, setNotes] = useState([])
-
-  useEffect(() => {
-    const getNotes = async () => {
-      const res = await fetch("http://localhost:3333/api/note")
-      const newNotes = await res.json()
-      setNotes(newNotes)
-    }
-    getNotes()
-  }, [])
-
-
+type TNote = {
+  title: String,
+  desc: String,
+  _id: String
+}
+const Body = ({ notes, deleteNote }: {
+  notes: TNote[]
+  deleteNote: Function
+}) => {
   return (
     <div className="Body">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {
+        notes.map((note) => {
+          return (
+            <Card
+              _id={note._id}
+              title={note.title}
+              desc={note.desc}
+              deleteNote={deleteNote}
+            />
+          )
+        })
+      }
     </div>
   )
 }
