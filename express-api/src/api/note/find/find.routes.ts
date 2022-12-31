@@ -5,13 +5,28 @@ import Note from "../../../models/Note";
 const router = Router();
 
 /**
- * get all notes
+ * get note by title
  * METHOD: GET
- * route "{url}/api/note/find"
+ * route "{url}/api/note/find?"
  */
-router.get("/", async (_req: Request, res: Response) => {
-  const data = await Note.find();
-  res.status(200).json(data);
+router.get("/", async (req: Request, res: Response) => {
+  try {
+    const { title } = req.query;
+    const titleRgx = title ? ".*" + title + ".*" : "";
+
+    const data = await Note.find({
+      title: {
+        $regex: titleRgx,
+        $options: "i",
+      },
+    });
+
+    res.status(200).json(data);
+  } catch (error: any) {
+    res.status(404).json({
+      message: error,
+    });
+  }
 });
 
 /**
