@@ -28,18 +28,21 @@ const App = () => {
     setNotes((notes) => notes.filter(note => note._id !== _id))
   }
 
+  const getNotes = async (title?: String) => {
+    const querieTitle = title ?? ""
+    await fetch(`http://localhost:3333/api/note?title=${querieTitle}`)
+      .then(res => res.json())
+      .then(data => setNotes(data))
+  }
+
   useEffect(() => {
-    const getNotes = async () => {
-      await fetch("http://localhost:3333/api/note")
-        .then(res => res.json())
-        .then(data => setNotes(data))
-    }
     getNotes()
   }, [])
 
   return (
     <div className='App'>
       <Header
+        getNotes={getNotes}
         createNote={createNote} />
       <Body
         notes={notes}
