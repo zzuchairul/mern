@@ -10,12 +10,10 @@ const AddButton = ({ createNote }: {
   }
 
   return (
-    <form onSubmit={createNoteHandler}>
-      <button className='AddButton' >
-        <BsPlusLg />
-        Add Task
-      </button>
-    </form>
+    <button className='AddButton' onClick={createNoteHandler}>
+      <BsPlusLg />
+      Add Task
+    </button>
   )
 }
 
